@@ -1,5 +1,4 @@
-# Elevate Labs: Task 5
-# Exploratory Data Analysis (EDA)
+# Elevate Labs: Task 5 (Exploratory Data Analysis)
 # Dataset - Titanic
 
 ## Overview
