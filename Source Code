@@ -1,0 +1,36 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+test = pd.read_csv("/content/test.csv")
+train = pd.read_csv("/content/train.csv")
+
+print(train.info())
+print(train.describe())
+print(train['Survived'].value_counts())
+print(train['Pclass'].value_counts())
+print(train['Sex'].value_counts())
+
+sns.countplot(x='Survived', data=train)
+plt.show()
+
+sns.countplot(x='Pclass', hue='Survived', data=train)
+plt.show()
+
+sns.countplot(x='Sex', hue='Survived', data=train)
+plt.show()
+
+sns.histplot(train['Age'].dropna(), kde=True)
+plt.show()
+
+sns.boxplot(x='Survived', y='Age', data=train)
+plt.show()
+
+sns.scatterplot(x='Age', y='Fare', hue='Survived', data=train)
+plt.show()
+
+sns.pairplot(train[['Survived','Pclass','Age','Fare','SibSp','Parch']], hue='Survived')
+plt.show()
+
+sns.heatmap(train[['Survived','Pclass','Age','Fare','SibSp','Parch']].corr(), annot=True, cmap='coolwarm')
+plt.show()
